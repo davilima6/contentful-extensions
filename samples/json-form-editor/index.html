@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>JSON Form Editor Widget</title>
-    <script src="https://unpkg.com/contentful-ui-extensions-sdk@3/dist/cf-extension-api.js"></script>
-    <script src="https://unpkg.com/json-editor@0.7.28/dist/jsoneditor.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/contentful-ui-extensions-sdk@3/dist/cf-extension.css" />
+    <script src="https://unpkg.com/contentful-ui-extensions-sdk@3.10.3/dist/cf-extension-api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/7.0.5/jsoneditor.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/contentful-ui-extensions-sdk@3.10.3/dist/cf-extension.css" />
   </head>
   <body>
     <script>
@@ -251,12 +251,12 @@
              disable_properties: true,
              show_errors: 'always'
          });
-         
+
          var watcherCallback = function(path) {
              cfApi.window.updateHeight();
              validateAndSave();
          };
-  
+
          for (var key in editor.editors) {
              if (editor.editors.hasOwnProperty(key) && key !== 'root') {
                  editor.watch(key, watcherCallback.bind(editor, key));
